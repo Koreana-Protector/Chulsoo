@@ -11,6 +11,7 @@ html, body {
   height: 100%;
 }
 
+
 .flexbox {
   background: linear-gradient(155deg, #bccaff, #dae1ff, #bccaff);
   width: 100%;
@@ -32,7 +33,7 @@ html, body {
 .search > h3 {
   color: #ffffff;
   margin-bottom: 15px;
-  text-shadow: 0 1px #8500ff;
+  text-shadow: 0 1px  #0091c2;
 }
 
 .search > div {
@@ -78,4 +79,20 @@ html, body {
 .search > div > input:focus,
 .search > div > input:not(:placeholder-shown) {
   width: 250px;
+}
+ 
+.text-box {
+  /* max-width: 900px; */
+  width: 450px;
+  margin: 10px;
+  padding: 16px;
+  border: 4px dashed white;
+  box-sizing: border-box;
+  position: absolute;
+  top: 600px;
+}
+.text-box p {
+  /*text-align: center;*/
+  border: 3px;  height: auto; width: 200px; 
+  color:rgb(58, 58, 58);
 }
