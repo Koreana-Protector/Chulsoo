@@ -19,10 +19,7 @@ def sentiment_predict(new_sentence):
   pad_new = pad_sequences(encoded, maxlen = 42) # 패딩
   #print(pad_new)
   score = float(loaded_model.predict(pad_new)) # 예측
-  if(score > 0.5):
-    return "옳은 정보입니다."
-  else:
-    return "잘못된 정보입니다."
+  return score
 
 
 @app.route("/", methods=['GET','POST'])
@@ -30,9 +27,9 @@ def index():
 	if request.method == 'GET':
 		return render_template('index.html')
 	if request.method == 'POST':
-		sentence = request.args.get('inputext')
-		result = sentiment_predict(sentence)
-		return render_template('index.html', result = result)
+		sentence = float(request.form['inputext'])
+		score = sentiment_predict(sentence)
+		return render_template('index.html', result = score)
 
 if __name__ == '__main__':
 	app.run(debug=True)
