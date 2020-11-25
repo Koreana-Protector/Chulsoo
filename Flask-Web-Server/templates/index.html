@@ -21,13 +21,15 @@
         <div class="search">
         <h1>대한민국 알리미</h1>
         <h3>Click on search icon, then type your keyword.</h3>
-            <div>    
+            <form>
              <input type="text" name = "inputext" placeholder="Search . . ." required>
-            </div>
+            </form> 
         </div>
         
         <div class="text-box" data-maxlength="250"> 
-        <p>result</p>
+        <p>
+            {{ result }}
+        </p>
         </div>
     </div>
 

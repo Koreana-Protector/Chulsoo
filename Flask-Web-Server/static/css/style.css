@@ -36,13 +36,13 @@ html, body {
   text-shadow: 0 1px  #0091c2;
 }
 
-.search > div {
+.search > form {
   display: inline-block;
   position: relative;
   filter: drop-shadow(0 1px #0091c2);
 }
 
-.search > div:after {
+.search > form:after {
   content: "";
   background: white;
   width: 4px;
@@ -53,7 +53,7 @@ html, body {
   transform: rotate(135deg);
 }
 
-.search > div > input {
+.search > form > input {
   color: rgb(41, 41, 41);
   font-size: 16px;
   background: transparent;
@@ -66,18 +66,18 @@ html, body {
   transition: width 0.5s;
 }
 
-.search > div > input::placeholder {
+.search > form > input::placeholder {
   color: #efefef;
   opacity: 0;
   transition: opacity 150ms ease-out;
 }
 
-.search > div > input:focus::placeholder {
+.search > form > input:focus::placeholder {
   opacity: 1;
 }
 
-.search > div > input:focus,
-.search > div > input:not(:placeholder-shown) {
+.search > form > input:focus,
+.search > form > input:not(:placeholder-shown) {
   width: 250px;
 }
  
