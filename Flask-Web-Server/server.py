@@ -1,6 +1,7 @@
 ﻿# -*- codingL utf-8 -*-
 from flask import Flask, render_template, request
 
+import urllib.request
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
@@ -24,14 +25,15 @@ def sentiment_predict(new_sentence):
   else:
     return "잘못된 정보입니다."
 
+
 @app.route("/", methods=['GET','POST'])
 def index():
-	if request.methods == 'GET':
+	if request.method == 'GET':
 		return render_template('index.html')
-	if request.methods == 'POST':
+	if request.method == 'POST':
 		sentence = request.form['inputext']
 		result = sentiment_predict(sentence)
-
 		return render_template('index.html', result = result)
+
 if __name__ == '__main__':
 	app.run(debug=True)
